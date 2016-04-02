@@ -1,24 +1,5 @@
 angular.module('starter.services', [])
 
-.factory('SearchSrv', function() {
-  var publicData = {
-    set: set,
-    get: get
-  };
-  var data = {
-    search: ""
-  }
-
-  function set(value) {
-    data.search = value;
-  }
-  function get() {
-    return data.search;
-  }
-
-  return publicData;
-})
-
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
 

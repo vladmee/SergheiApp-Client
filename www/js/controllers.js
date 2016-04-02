@@ -1,25 +1,24 @@
 angular.module('starter.controllers', [])
 
-.controller('SearchCtrl', function($log, $http, $scope, $timeout, $stateParams, ionicMaterialInk, SearchSrv,$state) {
+.controller('SearchCtrl', function($log, $http, $scope, $timeout, $stateParams, ionicMaterialInk,$state) {
     ionicMaterialInk.displayEffect();
 
     $scope.searchCall = function(value) {
-      SearchSrv.set(value);
-      $state.go('tab.results');
+      $state.go('tab.results', {'search': value});
     };
 
 })
 
-.controller('SearchResultsCtrl', function($log, $http,$scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion, SearchSrv) {
+.controller('SearchResultsCtrl', function($log, $http,$scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
 
   $http({
     'mehod': 'GET',
-    'url': 'https://sergheiapp-sharebaan.c9users.io/da',
+    'url': 'https://sergheiapp-sharebaan.c9users.io/search',
     'headers': {
             'Content-Type': 'application/json'
     },
     'params': {
-      'search': SearchSrv.get()
+      'find': $stateParams.search
     }
   }).then(function(res) {
       $scope.results= res;

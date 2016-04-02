@@ -51,7 +51,7 @@ angular.module('starter', ['ionic', 'ionic-material','starter.controllers', 'sta
     })
 
     .state('tab.results', {
-          url: '/results',
+          url: '/results/:search',
           views: {
             'tab-results': {
               templateUrl: 'templates/search-results.html',
