@@ -48,9 +48,18 @@ angular.module('starter', ['ionic', 'ionic-material','starter.controllers', 'sta
             controller: 'SearchCtrl'
           }
         }
-    });
+    })
 
-  // if none of the above states are matched, use this as the fallback
+    .state('tab.results', {
+          url: '/results',
+          views: {
+            'tab-results': {
+              templateUrl: 'templates/search-results.html',
+              controller: 'SearchResultsCtrl'
+            }
+          }
+      });
+
   $urlRouterProvider.otherwise('/tab/search');
 
 });
