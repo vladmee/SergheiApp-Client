@@ -7,10 +7,13 @@
             </div>
         </div>
         <div class="list">
-            <ion-md-input placeholder="Search" highlight-color="balanced" type="text"></ion-md-input>
+            <label class="item item-input">
+              <span class="input-label">Search</span>
+              <input type="text" ng-model="string">
+            </label>
         </div>
         <div class="padding">
-            <button ui-sref="app.profile" class="button button-full button-assertive ink">Search</button>
+            <button class="button button-full button-assertive ink" ng-click="searchCall(string)">Search</button>
         </div>
     </ion-content>
 </ion-view>

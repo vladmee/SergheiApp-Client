@@ -1,36 +1,21 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
-
-.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
-})
-
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
-})
-
-.controller('SearchCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {
-    $scope.$parent.clearFabs();
-    $timeout(function() {
-        $scope.$parent.hideHeader();
-    }, 0);
+.controller('SearchCtrl', function($log, $http, $scope, $timeout, $stateParams, ionicMaterialInk) {
     ionicMaterialInk.displayEffect();
-})
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
+    $scope.searchCall = function(value) {
+      $http({
+        'mehod': 'GET',
+        'url': 'https://sergheiapp-sharebaan.c9users.io/da',
+        'headers': {
+                'Content-Type': 'application/json'
+        },
+        'params': {
+          'search': value
+        }
+      }).then(function(res) {
+          $log.info(res);
+      });
+    };
+
 });
