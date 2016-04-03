@@ -7,13 +7,14 @@
             </div>
         </div>
         <div class="list">
+          <ion-md-input placeholder="Search" highlight-color="balanced" type="text" ng-model="find"></ion-md-input>
             <label class="item item-input">
               <span class="input-label">Search</span>
-              <input type="text" ng-model="string">
+              <input type="text" ng-model="find">
             </label>
         </div>
         <div class="padding">
-            <button class="button button-full button-assertive ink" ng-click="searchCall(string)">Search</button>
+            <button class="button button-full button-assertive ink" ng-click="searchCall(find)">Search</button>
         </div>
     </ion-content>
 </ion-view>

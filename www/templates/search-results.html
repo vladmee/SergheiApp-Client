@@ -4,7 +4,7 @@
             <div ng-repeat="user in results.data" class="card card-gallery item item-text-wrap">
                 <div class="ink dark-bg">
                     <h2>{{user.name}}</h2>
-                    <img class="full-image" src="img/sansa-snowcastle3.jpg">
+                    <img ng-if="user.picture.image" class="full-image" ng-src="{{ user.picture.location }}">
                 </div>
                 <div class="item tabs tabs-secondary tabs-icon-left">
                     <a class="tab-item stable-bg assertive">
