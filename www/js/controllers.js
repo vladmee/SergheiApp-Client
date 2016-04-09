@@ -2,7 +2,6 @@ angular.module('starter.controllers', [])
 
 .controller('SearchCtrl', function($log, $http, $scope, $timeout, $stateParams, ionicMaterialInk,$state, $ionicNavBarDelegate) {
     ionicMaterialInk.displayEffect();
-    $scope.find = "Slimy";
 
     $scope.searchCall = function(value) {
       $state.go('tab.results', {'search': value});

@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic', 'ionMdInput', 'ionic-material','starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'ionMdInput', 'ionic-material','starter.controllers', 'starter.services', 'angucomplete-alt'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

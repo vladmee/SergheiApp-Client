@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "ionic-material": "~0.4.2",
-    "ion-md-input": "~1.0.4"
+    "ion-md-input": "~1.0.4",
+    "angucomplete-alt": "~2.2.0"
   }
 }

@@ -1,15 +1,32 @@
 <ion-view hide-nav-bar="true">
-    <ion-content style="background: url(img/search.jpg) center; background-size: cover;">
-        <div class="hero no-header flat">
-            <div class="content">
-                <div class="app-icon"></div>
-            </div>
-        </div>
-        <div class="list">
-          <ion-md-input placeholder="Search" highlight-color="assertive" type="text" ng-model="find"></ion-md-input>
-        </div>
-        <div class="padding">
-            <button class="button button-full button-assertive ink" ng-click="searchCall(find)">Search</button>
-        </div>
-    </ion-content>
+  <ion-content style="background: url(img/search.jpg) center; background-size: cover;">
+    <div class="hero no-header flat">
+      <div class="content">
+        <div class="app-icon"></div>
+      </div>
+    </div>
+    <div class="list">
+      <!-- <ion-md-input placeholder="Search" highlight-color="assertive" type="text" ng-model="find"></ion-md-input> -->
+      <div
+        angucomplete-alt
+        id="searchField"
+        placeholder="Search your celebrity"
+        pause="500"
+        ng-model="findStr"
+        selected-object="selectedUser" remote-url="https://sergheiapp-sharebaan.c9users.io/search?find=" remote-url-request-formatter="remoteUrlRequestFn"
+        remote-url-data-field=""
+        title-field="name"
+        description-field="category"
+        image-field="image.location"
+        text-searching="Searching..."
+        text-no-results="Oops.."
+        input-class="search-input"
+        match-class="highlight"
+        clear-selected="true">
+      </div>
+    </div>
+    <div class="padding">
+      <button class="button button-full button-assertive ink" ng-click="searchCall(findStr)">Search</button>
+    </div>
+  </ion-content>
 </ion-view>
