@@ -1,17 +1,12 @@
-<ion-view view-title="Search" align-title="left">
+<ion-view hide-nav-bar="true">
     <ion-content style="background: url(img/search.jpg) center; background-size: cover;">
         <div class="hero no-header flat">
             <div class="content">
                 <div class="app-icon"></div>
-                <h1>SergheiApp</h1>
             </div>
         </div>
         <div class="list">
-          <ion-md-input placeholder="Search" highlight-color="balanced" type="text" ng-model="find"></ion-md-input>
-            <label class="item item-input">
-              <span class="input-label">Search</span>
-              <input type="text" ng-model="find">
-            </label>
+          <ion-md-input placeholder="Search" highlight-color="assertive" type="text" ng-model="find"></ion-md-input>
         </div>
         <div class="padding">
             <button class="button button-full button-assertive ink" ng-click="searchCall(find)">Search</button>

@@ -1,12 +1,12 @@
-<ion-view view-title="Search Results">
+<ion-view title="Results for {{ find }}">
     <ion-content>
         <div class="list">
             <div ng-repeat="user in results.data" class="card card-gallery item item-text-wrap">
                 <div class="ink dark-bg">
                     <h2>{{user.name}}</h2>
-                    <img ng-if="user.picture.image" class="full-image" ng-src="{{ user.picture.location }}">
+                    <img ng-if="user.image.has" class="full-image" ng-src="{{ user.image.location }}">
                 </div>
-                <div class="item tabs tabs-secondary tabs-icon-left">
+                <div class="item tabs tabs-secondary `tabs-icon-left">
                     <a class="tab-item stable-bg assertive">
                         <i class="icon ion-heart"></i>
                         4
