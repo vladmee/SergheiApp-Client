@@ -1,22 +1,14 @@
 <ion-view title="Results for {{ find }}">
-    <ion-content>
-        <div class="list">
-            <div ng-repeat="user in results.data" class="card card-gallery item item-text-wrap">
-                <div class="ink dark-bg">
-                    <h2>{{user.name}}</h2>
-                    <img ng-if="user.image.has" class="full-image" ng-src="{{ user.image.location }}">
-                </div>
-                <div class="item tabs tabs-secondary `tabs-icon-left">
-                    <a class="tab-item stable-bg assertive">
-                        <i class="icon ion-heart"></i>
-                        4
-                    </a>
-                    <a class="tab-item stable-bg positive-900">
-                        <i class="icon ion-chatbubbles"></i>
-                        2
-                    </a>
-                </div>
-            </div>
+    <ion-content ng-class="{expanded:isExpanded}">
+        <div class="content">
+            <div class="list">
+              <a ng-repeat="user in results.data" href="#" class="item item-avatar item-icon-right">
+                  <img ng-if="user.image.has" ng-src="{{ user.image.location }}">
+                  <h2>{{user.name}}</h2>
+                  <p>{{user.category}}</p>
+                  <i class="icon ion-facebook muted"></i>
+              </a>
+          </div>
         </div>
     </ion-content>
 </ion-view>

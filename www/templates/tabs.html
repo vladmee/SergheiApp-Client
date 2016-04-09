@@ -4,7 +4,7 @@
     <ion-nav-view name="tab-search"></ion-nav-view>
   </ion-tab>
 
-  <ion-tab title="Results" icon-off="ion-ios-paper-outline" icon-on="ion-ios-paper" href="#/tab/results">
+  <ion-tab ng-if="hasResults" title="Results" icon-off="ion-ios-paper-outline" icon-on="ion-ios-paper" href="#/tab/results">
     <ion-nav-view name="tab-results"></ion-nav-view>
   </ion-tab>
 

@@ -37,7 +37,8 @@ angular.module('starter', ['ionic', 'ionMdInput', 'ionic-material','starter.cont
     .state('tab', {
     url: '/tab',
     abstract: true,
-    templateUrl: 'templates/tabs.html'
+    templateUrl: 'templates/tabs.html',
+    controller: 'AppCtrl'
   })
 
   .state('tab.search', {
