@@ -103,23 +103,23 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('SearchResultsCtrl', function($log, $http,$scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
+.controller('SearchResultsCtrl', function($log, $http,$scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion, ResultsService) {
 
   $scope.find = $stateParams.search;
+  $scope.offset = 0;
 
-  $http({
-    'mehod': 'GET',
-    'url': 'https://sergheiapp-sharebaan.c9users.io/search',
-    'headers': {
-            'Content-Type': 'application/json'
-    },
-    'params': {
-      'find': $stateParams.search
-    }
-  }).then(function(res) {
-      $scope.results= res;
-      $log.info($scope.results);
+  ResultsService.get($scope.find,10,$scope.offset).then(function(res){
+    $scope.results = res;
   });
+
+  $scope.moreDataCanBeLoaded = true;
+
+  $scope.loadMore = function() {
+    $scope.offset += 5;
+    ResultsService.get($scope.find,10,$scope.offset).then(function(res){
+      $scope.results.data = $scope.results.data.concat(res.data);
+    });
+  };
 
   // Set Header
       $scope.$parent.showHeader();

@@ -2,13 +2,20 @@
     <ion-content ng-class="{expanded:isExpanded}">
         <div class="content">
             <div class="list">
-              <a ng-repeat="user in results.data" href="#" class="item item-avatar item-icon-right">
+              <a ng-repeat="user in results.data track by $index" href="#" class="item item-avatar item-icon-right">
                   <img ng-if="user.image.has" ng-src="{{ user.image.location }}">
                   <h2>{{user.name}}</h2>
                   <p>{{user.category}}</p>
-                  <i class="icon ion-facebook muted"></i>
+                  <i class="icon ion-social-facebook muted"></i>
               </a>
           </div>
         </div>
+
+        <ion-infinite-scroll
+          immediate-check="false"
+          ng-if="moreDataCanBeLoaded"
+          on-infinite="loadMore()"
+          distance="1%">
+        </ion-infinite-scroll>
     </ion-content>
 </ion-view>
